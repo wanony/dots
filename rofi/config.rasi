@@ -1,0 +1,95 @@
+configuration {
+	width: 30;
+	lines: 1;
+	columns: 1;
+	font: "mononoki Nerd Font 16";
+	show-icons: true;
+	terminal: "termite";
+/*	drun-match-fields: "name,generic,exec,categories";*/
+/*	drun-show-actions: false;*/
+/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*	auto-select: false;*/
+}
+
+* {
+    default-background: rgba(40, 42, 54, 80%); // transparency
+    default-foreground: rgba(248, 248, 242, 100%);
+    default-border: rgba(143, 188, 187, 100%);
+    alternative-background: rgba(40, 42, 54, 100%);
+    invisible: rgba(0, 0, 0, 0%);
+
+    /* nord colors */
+    white: rgba(216,222,233, 100%); //
+    pink: rgba(180,142,173, 100%); // #b48ead
+    green: rgba(143,188,187, 100%); // #8fbcbb
+
+    /* lightest to darkest */
+    datebg: rgba(163, 169, 194, 100%); // a3a9c2
+    weatherbg: rgba(132,140,174, 100%); // #848cae
+    aurbg: rgba(101,111,154, 100%); // #656f9a
+    cpubg: rgba(81,89,123, 100%); // #51597b
+    membg: rgba(61,67,93, 100%); // #3d435d
+    barbg: rgba(31,34,47, 100%); // #1f222f
+
+    background-color: @barbg;
+    border-color: @default-border;
+    text-color: @white;
+}
+
+#window {
+    background-color: @barbg;
+    border: 2;
+    border-radius: 1;
+    border-color: @default-border;
+    padding: 15; 
+}
+
+#mainbox {
+    border: 0;
+    padding: 0;
+}
+
+#message {
+    border: 1;
+    border-radius: 3;
+    padding: 5;
+    background-color: @alternative-background;
+}
+
+#textbox {
+    background-color: @entry-background;
+}
+
+#element {
+    padding: 5;
+    border: 1;
+    border-radius: 3;
+    border-color: @invisible;
+}
+
+#element.normal.normal {
+    background-color: @invisible;
+}
+
+#element.normal.urgent {
+    background-color: @aurbg;
+}
+
+#element.normal.active {
+    border-color: @pink;
+}
+
+#element.selected.normal {
+    background-color: @barbg;
+    border-color: @aurbg;
+    color: @white;
+}
+
+#listview {
+    fixed-height: 0;
+    spacing: 2;
+    scrollbar: true;
+    padding: 2 0 0;
+}
+
+/* vim:ft=css
