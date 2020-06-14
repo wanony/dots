@@ -5,7 +5,7 @@
 # Repository: https://github.com/arcticicestudio/nord-termite
 # License:    MIT
 [options]
-font = mononoki Nerd Font 12
+font = mononoki Nerd Font 14
 
 [colors]
 cursor = #d8dee9

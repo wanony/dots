@@ -1,30 +1,50 @@
-# Based on the default bindings from ArcoLinux BSPWM build
 
-# Browser
+#################################################################
+# SUPER + FUNCTION KEYS
+#################################################################
+
+# Brave Browser
 super + F1
-	Firefox
+	brave
+
+# VSCodium
+super + F2
+	vscodium
+
+# Spotify
+super + F10
+    spotify
+
+# Rofi Fullscreen
+super + F11
+    rofi -show run -fullscreen
+
+#################################################################
+# SUPER + ... KEYS
+#################################################################
 
 # Rofi
 super + space 
     rofi -show drun
 
-# Terminal
+#Termite
 super + Return
-    alacritty 
+    termite 
 
-# Xkill if things get nasty
+#Xkill
 super +shift + Escape
     xkill
 
-# Toggle fullscreen, never really used
+#Toggle fullscreen of window
 super + f
 	bspc node --state \~fullscreen
 
-# kill
+
+#kill
 super + q
 	bspc node -c
 
-# Focus selected desktop
+#Focus selected desktop
 super + Tab
 	bspc desktop -f '^{1-9,10}'
 
@@ -44,31 +64,49 @@ super + BackSpace
 super + {1-9,0}
 	bspc desktop -f '^{1-9,10}'
 
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
 # nemo 
 super + shift + Return
 	nemo
 
-# dmenu
+#dmenu
 super + shift + d
 	dmenu_run
 
-# reload sxhkd:
+#reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
 
+#Clearine for logout and poweroff etc
+#super + shift + Escape
+#    clearine
 
-# Pulse Audio Control
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#Pulse Audio Control
 ctrl + alt + u
      pavucontrol
 
-# termite
+#termite
 ctrl + alt + t
     termite
 
+#################################################################
+# CONTROL + SHIFT KEYS
+#################################################################
 
-# Xcfe4-TaskManager
+#Xcfe4-TaskManager
 ctrl + shift + Escape
     xfce4-taskmanager
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
 
 # Actual useful keybind
 super + p 
@@ -76,28 +114,39 @@ super + p
 
 super + Print
     xfce4-screenshooter -f
+#################################################################
+# SUPER + ALT KEYS
+#################################################################
 
 # Move floating window
 super + alt + {_,shift + }{Left,Down,Up,Right}
 	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
 
+#################################################################
+# SUPER + CONTROL KEYS
+#################################################################
+
 # Cancel preselection
 super + ctrl + space
 	bspc node --presel-dir cancel
 
-#M ove window to selected desktop FOR QWERTY KEYBOARDS
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#Move window to selected desktop FOR QWERTY KEYBOARDS
 super + shift + {1-9,0}
     id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
 
-# Reload bspwm
+#Reload bspwm
 super + shift + r
 	~/.config/bspwm/bspwmrc
 
-# kill
+#kill
 super + shift + q
 	bspc node -c
 
-# Logout
+#Logout
 super + shift + x
 	bspc quit
 
@@ -125,6 +174,10 @@ super + shift + Up
 super + shift + Down
 		bspc node -m next --follow
 
+#################################################################
+# SUPER + CONTROL KEYS
+#################################################################
+
 # Focus/swap windows by direction
 super + ctrl + {Left,Down,Up,Right}
 	bspc node --{focus} {west,south,north,east}
@@ -145,6 +198,11 @@ super + ctrl + {u,i,o,p}
 super + ctrl + {_,shift +}{1-9}
 	bspc node {_,@/} --presel-ratio 0.{1-9}
 
+
+#################################################################
+# ALT KEYS
+#################################################################
+
 #Focus selected desktop
 alt + Tab
 	bspc desktop -f '^{1-9,10}'
@@ -157,9 +215,17 @@ alt + shift + Tab
 alt + space
 	bspc node @/ --rotate {90,-90}
 
+#################################################################
+# ALT + SHIFT KEYS
+#################################################################
+
 # Expand tiled space
 alt + shift + {h,j,k,l}
 	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+#################################################################
+# WINDOW FOCUS
+#################################################################
 
 # Focus next/previous window
 ctrl + alt + Left
